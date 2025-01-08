@@ -1,5 +1,6 @@
 
 using Microsoft.AspNetCore.Mvc;
+
 using AmorAMC_3TwoToFour.Services;
 
 namespace AmorAMC_3TwoToFour.Controllers
@@ -8,21 +9,21 @@ namespace AmorAMC_3TwoToFour.Controllers
     [Route("[controller]")]
     public class GreaterLessThanAPI : Controller
     {
-        private readonly GreaterLessThan _greaterLessThan;
+        private readonly GreaterLessThanServices _greaterLessThanServices;
 
-        public GreaterLessThanAPI(GreaterLessThan greaterLessThan)
+        public GreaterLessThanAPI(GreaterLessThanServices greaterLessThanServices)
         {
-            _greaterLessThan = greaterLessThan;
+            _greaterLessThanServices = greaterLessThanServices;
         }
 
         [HttpGet]
-        [Route("greaterLessThan/{num1}/{num2}")]
-        public string greaterLessThan(int num1, int num2)
+        [Route("compare/{num1}/{num2}")]
+        public string compare(int num1, int num2)
         {
-            return _greaterLessThan.compare(num1, num2);
+            return _greaterLessThanServices.compare(num1, num2);
         }
 
-          
-      
+
+
     }
 }

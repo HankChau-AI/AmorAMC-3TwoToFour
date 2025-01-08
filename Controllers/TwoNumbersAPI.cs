@@ -9,18 +9,18 @@ namespace AmorAMC_3TwoToFour
     [Route("[controller]")]
     public class TwoNumbersAPI : Controller
     {
-        private readonly TwoNumbers _twoNumbers;
+        private readonly TwoNumbersServices _twoNumbersServices;
 
-        public TwoNumbersAPI(TwoNumbers twoNumbers)
+        public TwoNumbersAPI(TwoNumbersServices twoNumbersServices)
         {
-            _twoNumbers = twoNumbers;
+            _twoNumbersServices = twoNumbersServices;
         }
 
          [HttpGet]
         [Route("add/{num1}/{num2}")]
         public int add(int num1, int num2)
         {
-            return _twoNumbers.add(num1, num2);
+            return _twoNumbersServices.add(num1, num2);
         }
     }
 }

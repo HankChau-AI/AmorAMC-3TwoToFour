@@ -1,11 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AmorAMC_3TwoToFour.Services
 {
-    public class TwoInputs
+    public class TwoInputsServices
     {
         public string greet(string name, string wakeUpTime)
         {

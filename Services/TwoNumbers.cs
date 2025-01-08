@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace AmorAMC_3TwoToFour.Services
 {
-    public class TwoNumbers
+    public class TwoNumbersServices
     {
         public int add(int num1, int num2)
         {

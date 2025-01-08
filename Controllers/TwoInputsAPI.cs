@@ -1,5 +1,6 @@
 
 using Microsoft.AspNetCore.Mvc;
+
 using AmorAMC_3TwoToFour.Services;
 
 
@@ -9,18 +10,18 @@ namespace AmorAMC_3TwoToFour.Controllers
     [Route("[controller]")]
     public class TwoInputsAPI : Controller
     {
-        private readonly TwoInputs _twoInputs;
+        private readonly TwoInputsServices _twoInputsServices;
 
-        public TwoInputsAPI(TwoInputs twoInputs)
+        public TwoInputsAPI(TwoInputsServices twoInputsServices)
         {
-            _twoInputs = twoInputs;
+            _twoInputsServices = twoInputsServices;
         }
 
        [HttpGet]
         [Route("greet/{name}/{WakeUpTime}")]
         public string greet(string name, string wakeUpTime)
         {
-            return _twoInputs.greet(name, wakeUpTime);
+            return _twoInputsServices.greet(name, wakeUpTime);
         }
     }
 }
